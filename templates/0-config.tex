@@ -1,0 +1,18 @@
+\documentclass[a4j,8pt,twocolumn]{extarticle}
+
+% ---------------
+
+\usepackage{winf-paper}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{ascmac}
+\usepackage{latexsym}
+\usepackage{ulem}
+\usepackage[dvipdfmx]{graphicx}
+
+% ---------------
+
+\AddToHook{begindocument/end}{%
+	\maketitle
+	\thispagestyle{empty}	% 1ページ目のページ番号を表示しない
+}
