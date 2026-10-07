@@ -27,7 +27,7 @@
                 "-interaction=nonstopmode",
                 "-l",
                 "-ot",
-                "-kanji=utf8 -synctex=1",
+                "-kanji=utf8 -synctex=1 -interaction=nonstopmode -file-line-error -halt-on-error",
                 "%DOC%.tex"
             ]
         },
@@ -38,7 +38,7 @@
                 "-l",
                 "-u",
                 "-ot",
-                "-kanji=utf8 -synctex=1",
+                "-kanji=utf8 -synctex=1 -interaction=nonstopmode -file-line-error -halt-on-error",
                 "%DOC%"
             ]
         },
