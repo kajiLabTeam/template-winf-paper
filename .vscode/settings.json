@@ -38,7 +38,7 @@
                 "-l",
                 "-u",
                 "-ot",
-                "-kanji=utf8 -synctex=1 -interaction=nonstopmode -file-line-error",
+                "-kanji=utf8 -synctex=1",
                 "%DOC%"
             ]
         },

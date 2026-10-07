@@ -15,7 +15,8 @@ RUN apt-get update && apt-get install -y \
     cpanminus \
     texlive-extra-utils \
     make \
-    npm
+    npm \
+    gh
 
 RUN apt-get clean
 RUN rm -rf /var/lib/apt/lists/*

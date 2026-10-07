@@ -7,6 +7,7 @@
   ],
   "workspaceFolder": "/workdir",
   "shutdownAction": "stopCompose",
+  "initializeCommand": "bash .devcontainer/initializeCommand.sh",
   "postStartCommand": "bash .devcontainer/postStartCommand.sh",
   "customizations": {
     "vscode": {

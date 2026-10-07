@@ -15,3 +15,6 @@ package-lock.json
 *.blg
 *.toc
 *(busy)
+
+# GitHub token passed from host (devcontainer)
+.devcontainer/.gh-token
