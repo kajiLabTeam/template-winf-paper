@@ -1,0 +1,23 @@
+{
+  "name": "ubuntu-texlive-ja",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "ubuntu-texlive-ja",
+  "runServices": [
+    "ubuntu-texlive-ja"
+  ],
+  "workspaceFolder": "/workdir",
+  "shutdownAction": "stopCompose",
+  "postStartCommand": "bash .devcontainer/postStartCommand.sh",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "james-yu.latex-workshop",
+        "myriad-dreamin.tinymist",
+        "OrangeX4.vscode-typst-sync",
+        "3w36zj6.textlint",
+        "ms-azuretools.vscode-docker",
+        "ICS.japanese-proofreading"
+      ]
+    }
+  }
+}

@@ -1,0 +1,122 @@
+{
+    //ここから下がtexの設定
+    "latex-workshop.latex.tools": [
+        {
+            "name": "upbibtex",
+            "command": "upbibtex",
+            "args": [
+                "%DOCFILE%"
+            ]
+        },
+        {
+            "name": "latexmk",
+            "command": "latexmk",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-pdf",
+                "%DOC%"
+            ],
+        },
+        // 日本語論文用
+        {
+            "name": "ptex2pdf",
+            "command": "ptex2pdf",
+            "args": [
+                "-interaction=nonstopmode",
+                "-l",
+                "-ot",
+                "-kanji=utf8 -synctex=1",
+                "%DOC%.tex"
+            ]
+        },
+        {
+            "name": "ptex2pdf (uplatex)",
+            "command": "ptex2pdf",
+            "args": [
+                "-l",
+                "-u",
+                "-ot",
+                "-kanji=utf8 -synctex=1",
+                "%DOC%"
+            ]
+        },
+        // 英語論文用
+        {
+            "name": "pdflatex",
+            "command": "pdflatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOC%"
+            ]
+        },
+        // bibファイル用(英語)
+        {
+            "name": "bibtex",
+            "command": "bibtex",
+            "args": [
+                "%DOCFILE%"
+            ]
+        },
+        // bibファイル用(日本語)
+        {
+            "name": "pbibtex",
+            "command": "pbibtex",
+            "args": [
+                "-kanji=utf8",
+                "%DOCFILE%"
+            ]
+        }
+    ],
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "uplatex -> upbibtex -> uplatex*2",
+            "tools": [
+                "ptex2pdf (uplatex)",
+                "upbibtex",
+                "ptex2pdf (uplatex)",
+                "ptex2pdf (uplatex)"
+            ]
+        },
+    ],
+    "latex-workshop.view.pdf.viewer": "tab",
+    // 使用パッケージのコマンドや環境の補完を有効にする
+    "latex-workshop.intellisense.package.enabled": true,
+    // 数式のプレビュー
+    "latex-workshop.hover.preview.enabled": true,
+    "latex-workshop.formatting.latex": "latexindent",
+    "[tex]": {
+        "editor.defaultFormatter": "James-Yu.latex-workshop",
+        "editor.suggest.snippetsPreventQuickSuggestions": false,
+        "editor.tabSize": 2
+    },
+    "[latex]": {
+        "editor.defaultFormatter": "James-Yu.latex-workshop",
+        "editor.suggest.snippetsPreventQuickSuggestions": false,
+        "editor.tabSize": 2
+    },
+    "[bibtex]": {
+        "editor.tabSize": 2
+    },
+    "files.exclude": {
+        "**/.git": true,
+        "**/.DS_Store": true,
+        "**/*.aux": true,
+        "**/*.synctex.gz": true,
+        "**/*.log": true,
+        "**/*.blg": true,
+        "node_modules": true,
+        "package.json": true,
+        "package-lock.json": true
+    },
+    "textlint.run": "onType",
+    "textlint.autoFixOnSave": true,
+    "textlint.configPath": "./.textlintrc",
+    "textlint.languages": [
+        "tex",
+        "latex",
+    ],
+}

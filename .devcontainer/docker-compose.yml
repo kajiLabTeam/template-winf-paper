@@ -1,0 +1,11 @@
+services:
+  ubuntu-texlive-ja:
+    build: .
+    command: sleep infinity
+    volumes:
+      - ../:/workdir
+      - ~/.gitconfig:/root/.gitconfig
+      - ./.latexmkrc:/root/.latexmkrc
+      - ~/.config/git:/root/.config/git
+    environment:
+      SHELL: "/bin/bash"

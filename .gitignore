@@ -1,0 +1,17 @@
+.DS_Store
+
+node_modules
+package.json
+package-lock.json
+
+# Latex
+*.aux
+*.dvi
+*.fdb_latexmk
+*.fls
+*.synctex.gz
+*.log
+*.Identifier
+*.blg
+*.toc
+*(busy)

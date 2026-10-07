@@ -1,0 +1,82 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "🟢 Cron開始（5分ごと自動commit＋push）",
+            "type": "shell",
+            "command": "/workdir/.vscode/cron-manage.sh",
+            "args": [
+                "start"
+            ],
+            "problemMatcher": [],
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            }
+        },
+        {
+            "label": "🟡 Cron開始（5分ごと自動commit、pushなし）",
+            "type": "shell",
+            "command": "/workdir/.vscode/cron-manage.sh",
+            "args": [
+                "start-no-push"
+            ],
+            "problemMatcher": [],
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            }
+        },
+        {
+            "label": "🛑 Cron停止",
+            "type": "shell",
+            "command": "/workdir/.vscode/cron-manage.sh",
+            "args": [
+                "stop"
+            ],
+            "problemMatcher": [],
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            }
+        },
+        {
+            "label": "❓ Cron状態確認",
+            "type": "shell",
+            "command": "/workdir/.vscode/cron-manage.sh",
+            "args": [
+                "status"
+            ],
+            "problemMatcher": [],
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            }
+        },
+        {
+            "label": "📝 自動commitログを表示",
+            "type": "shell",
+            "command": "tail",
+            "args": [
+                "-n",
+                "20",
+                "/workdir/.vscode/.auto-commit.log"
+            ],
+            "problemMatcher": [],
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            }
+        }
+    ]
+}

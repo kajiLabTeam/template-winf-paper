@@ -1,0 +1,128 @@
+version: 1
+rules:
+  - expected: ""
+    pattern: こと
+    prh: 「こと」という表現を使用しています．簡潔な表現への修正を検討してください．
+
+  - expected: スマートフォン
+    pattern: スマートホン
+    prh: 「スマートフォン」へ修正してください．
+
+  - expected: 行動分類
+    pattern: 行動認識
+    prh: 「行動分類」に統一してください．
+
+  - expected: 作業場所
+    pattern: /(?<!作業)場所/
+    prh: 「作業場所」に統一してください．
+
+  - expected: 行動
+    pattern: 工程
+    prh: 「行動」に統一してください．
+
+  - expected: 基$1
+    pattern: /もと(づいて|づく|づき|に)/
+    prh: 漢字にしてください．
+
+  - expected: 行$1
+    pattern: /行な(う|った|って|い|えば|える|おう|います|いました)/
+    prh: 送り仮名を修正してください．
+
+  - expected: 目指す
+    pattern: 図る
+    prh: 「目指す」に統一してください．
+
+  - expected: ""
+    pattern: TODO
+    prh: TODOが残っています
+
+  # https://github.com/kn1cht/textlint-rule-preset-ja-engineering-paper/blob/cbec8bd907eb54daad9fcb58f65547e3af61e3c7/src/dict/prh-rules.yml#L16
+  - expected: でき$1
+    pattern: /出来([あかがのをは過す損ずなまるたれてそ])/
+  - expected: なところ
+    pattern: な所
+  - expected: ほとんど
+    pattern: 殆ど
+  - expected: どうし
+    pattern: 同士
+  - expected: または
+    pattern: 又は
+  - expected: さら$1
+    pattern: /(?<!変)更(に|なる)/
+    specs:
+      - from: 更なる
+        to:   さらなる
+      - from: 変更に
+        to:   変更に
+  - expected: したがって
+    pattern: /(?<=^| |．|。)(従って)/
+  - expected: あげる
+    pattern: 挙げる
+  - expected: から
+    pattern: ～
+  # https://next49.hatenadiary.jp/entry/20120103/p2 論文に死んでも書いてはいけない言葉３０（後半のネタ枠以外）
+  - expected: ''
+    pattern:
+      - とても
+      - すごく
+      - 非常に
+      - 極めて
+    prh: 数値を示すなど客観的な表現に置き換えてください．
+    specs:
+      - from: とても多い
+        to:   多い
+  - expected: ''
+    pattern:
+      - だいたい
+      - ほぼ
+      - おおよそ
+    prh: 数値を示すなど客観的な表現に置き換えてください．
+  - expected: したがって
+    pattern: /(?<=^| |．|。)(だから)/
+  - expected: しかし
+    pattern: /(?<=^| |．|。)(でも|だけど|けれど|けど)/
+    specs:
+      - from: でも，
+        to:   しかし，
+      - from: なかでも
+        to:   なかでも
+  - expected: いかなる手段を用いても
+    pattern:
+      - どうやっても
+      - どうしても
+  - expected: と考えられる
+    pattern: /と思(う|われる)/
+  - expected: 可能性がある
+    pattern: かもしれない
+  - expected: と推測される
+    pattern: と感じる
+  - expected: 重要である
+    pattern: おもしろい
+  - expected: 多く
+    pattern: いっぱい
+  # https://takehikom.hateblo.jp/entry/20130807/1375821976 被験者ではなく実験参加者と書こう
+  - expected: 実験参加者
+    pattern: /被験者(?![内間])/
+    specs:
+      - from: 被験者20名
+        to:   実験参加者20名
+      - from: 被験者内計画
+        to:   被験者内計画
+  # 文字の連続
+  - expected: を
+    pattern:  /をを/
+  - expected: に
+    pattern:  /にに/
+  - expected: が
+    pattern:  /がが/
+  - expected: する
+    pattern:  /するする/
+  # 略語の禁止
+  - expected: スマートフォン
+    pattern:  /スマフォ|スマホ/
+  - expected: 卒業論文
+    pattern:  卒論
+  - expected: 修士論文
+    pattern:  修論
+  - expected: 博士論文
+    pattern:  博論

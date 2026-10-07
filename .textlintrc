@@ -1,0 +1,41 @@
+{
+  "plugins": [
+    "latex2e"
+  ],
+  "filters": {},
+  "rules": {
+    "preset-ja-technical-writing": {
+      "no-mix-dearu-desumasu": {
+        "prefer": "である"
+      },
+      "sentence-length": false,
+      "ja-no-mixed-period": {
+        "periodMark": "．",
+        "commaMark": "，"
+      },
+      "max-comma": {
+        "max": 2
+      },
+      "max-kanji-continuous-len": {
+        "max": 6,
+        "allow": [
+          "分類精度向上手法",
+          "行動分類精度向上",
+          "文字列照合手法"
+        ]
+      }
+    },
+    "preset-jtf-style": {
+      "1.2.2.ピリオド(.)とカンマ(,)": false,
+      "1.2.1.句点(。)と読点(、)": false
+    },
+    "preset-ja-engineering-paper": {
+      "prh": false
+    },
+    "prh": {
+      "rulePaths": [
+        "./prh.yml"
+      ]
+    }
+  }
+}
