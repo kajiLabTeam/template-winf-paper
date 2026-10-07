@@ -1,0 +1,59 @@
+%% winf-paper.sty
+%% 情報学ワークショップ (WiNF) 論文フォーマット用スタイル
+%%   - 本文 8pt 2段組（クラスオプションで指定）
+%%   - タイトル 12pt，著者名・所属 10.5pt，行間 15pt
+%%   - 章見出し 10pt，節見出し 9pt
+%%   - 余白 上下 3cm，左右 2cm
+\NeedsTeXFormat{pLaTeX2e}
+\ProvidesPackage{winf-paper}[2026/10/07 WiNF paper style]
+
+\RequirePackage[dvipdfmx,a4paper,top=30mm,bottom=30mm,left=20mm,right=20mm]{geometry}
+
+% ---------- 著者・所属 ----------
+\def\@affiliation{}
+\def\@eauthor{}
+\def\@eaffiliation{}
+\newcommand{\affiliation}[1]{\gdef\@affiliation{#1}}
+\newcommand{\eauthor}[1]{\gdef\@eauthor{#1}}
+\newcommand{\eaffiliation}[1]{\gdef\@eaffiliation{#1}}
+
+% 所属番号（例: \DAG{1}）
+\newcommand{\DAG}[1]{\textsuperscript{\dag#1}}
+
+% ---------- タイトル ----------
+\renewcommand{\maketitle}{%
+  \twocolumn[%
+    \begin{center}
+      {\fontsize{12pt}{15pt}\selectfont\gtfamily\sffamily\bfseries \@title\par}
+      \vspace{15pt}
+      {\fontsize{10.5pt}{15pt}\selectfont\gtfamily\sffamily \@author\par}
+      \ifx\@affiliation\@empty\else
+        {\fontsize{10.5pt}{15pt}\selectfont\gtfamily\sffamily \@affiliation\par}
+      \fi
+      \ifx\@eauthor\@empty\else
+        \vspace{6pt}
+        {\fontsize{10.5pt}{15pt}\selectfont\sffamily \@eauthor\par}
+      \fi
+      \ifx\@eaffiliation\@empty\else
+        {\fontsize{10.5pt}{15pt}\selectfont\sffamily \@eaffiliation\par}
+      \fi
+    \end{center}
+    \vspace{15pt}
+  ]%
+}
+
+% ---------- 見出し ----------
+\renewcommand{\section}{\@startsection{section}{1}{\z@}%
+  {1.5ex \@plus .5ex \@minus .2ex}{.8ex \@plus .2ex}%
+  {\fontsize{10pt}{14pt}\selectfont\gtfamily\sffamily\bfseries}}
+\renewcommand{\subsection}{\@startsection{subsection}{2}{\z@}%
+  {1.2ex \@plus .4ex \@minus .2ex}{.5ex \@plus .2ex}%
+  {\fontsize{9pt}{12pt}\selectfont\gtfamily\sffamily\bfseries}}
+\renewcommand{\subsubsection}{\@startsection{subsubsection}{3}{\z@}%
+  {1ex \@plus .3ex \@minus .2ex}{.3ex \@plus .1ex}%
+  {\normalsize\gtfamily\sffamily\bfseries}}
+
+% ---------- 参考文献 ----------
+\renewcommand{\refname}{参考文献}
+
+\endinput
