@@ -14,7 +14,9 @@ GitHub の `Use this template` ボタンを押して複製して使用してく�
 
 
 ## 環境構築
-VSCode で本リポジトリを開き，`Dev Containers: Reopen in Container` を実行する．
+VSCode で本リポジトリを開き，`⌘ + shift + P` を押して `Dev Containers: Reopen in Container (コンテナーで再度開く)` を実行する．
+もしくは，VSCode の左下の緑色のアイコンをクリックして `Reopen in Container` を選択する．
+もしくは，VSCode を開いた時に出る `Reopen in Container (コンテナーで再度開く)` のポップアップをクリックする．
 TeX Live（日本語）・LaTeX Workshop・textlint などがセットアップされたコンテナが起動する．
 
 
