@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 # Runs on the host. Exports the host gh token so the container can log in with it.
 set -u
 cd "$(dirname "$0")"
