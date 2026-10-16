@@ -1,6 +1,9 @@
 services:
   ubuntu-texlive-ja:
-    build: .
+    # Built by initializeCommand.sh. Having no "build:" here keeps the Dev Containers
+    # extension from building via a temp Dockerfile, which docker compose (bake) rejects.
+    image: winf-paper-devcontainer
+    pull_policy: never
     command: sleep infinity
     volumes:
       - ../:/workdir
