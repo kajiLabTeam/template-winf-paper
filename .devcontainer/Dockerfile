@@ -16,10 +16,13 @@ RUN apt-get update && apt-get install -y \
     texlive-extra-utils \
     make \
     npm \
-    gh
+    gh \
+    tzdata
 
 RUN apt-get clean
 RUN rm -rf /var/lib/apt/lists/*
+ENV TZ=Asia/Tokyo
+RUN ln -sf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 RUN kanji-config-updmap-sys ipaex
 
 WORKDIR /workdir
