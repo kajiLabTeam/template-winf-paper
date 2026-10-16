@@ -2,8 +2,8 @@
 
 # Cron job management script
 
-CRON_JOB="*/5 * * * * /workdir/auto-commit.sh >> /workdir/.auto-commit.log 2>&1"
-CRON_JOB_NO_PUSH="*/5 * * * * /workdir/auto-commit.sh --no-push >> /workdir/.auto-commit.log 2>&1"
+CRON_JOB="*/5 * * * * /workdir/.vscode/auto-commit.sh >> /workdir/.vscode/.auto-commit.log 2>&1"
+CRON_JOB_NO_PUSH="*/5 * * * * /workdir/.vscode/auto-commit.sh --no-push >> /workdir/.vscode/.auto-commit.log 2>&1"
 STATE_FILE="/root/.cron-state"
 
 case "$1" in
