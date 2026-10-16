@@ -9,6 +9,7 @@ RUN apt-get update && apt-get install -y \
     latexmk \
     language-pack-ja \
     wget \
+    cron \
     xzdec \
     texlive-latex-extra \
     git \
