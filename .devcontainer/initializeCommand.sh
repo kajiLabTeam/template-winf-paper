@@ -21,4 +21,10 @@ else
 	echo "gh not found on host, skipping"
 fi
 
+# Build the image here instead of letting docker-compose.yml build it (see the comment there)
+if ! docker build -t winf-paper-devcontainer .; then
+	echo "docker build failed"
+	exit 1
+fi
+
 exit 0
